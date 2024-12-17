@@ -1,68 +1,104 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# **YansPrint**
+**Customized Printing Management Software**
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+YansPrint is a software solution built with the Laravel framework. It streamlines client management, document handling, and workflows for printing services.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## **Features**
+1. [x] Custom printing workflow management
+2. [x] **Invoice Generation** and automatic email sending
+3. [x] **Trello API** for task and workflow integration
+4. [x] **Stripe Terminal** for secure payments
+5. [x] **Shipping API** for order fulfillment and tracking
+6. [x] **Google Drive Integration** for cloud file storage
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## **Localhost Installation with Docker**
 
-## Learning Laravel
+### **Pre-requisites**
+1. Install **Docker** and **Docker Compose**:
+    - **Linux**:
+      ```bash
+      sudo apt-get update
+      sudo apt-get install docker docker-compose
+      ```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+2. Clone the repository:
+   ```bash
+   git clone https://github.com/sergeygalstyan87/printing.git
+   cd printing
+   ```
+   
+3. Create .env file:
+   ```bash
+   cp .env.example .env
+   ```
+   
+4. Start Docker containers:
+   ```bash
+   docker-compose up -d
+   ```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+5. Install Composer dependencies:
+   ```bash
+   docker-compose exec app composer install
+   ```
 
-## Laravel Sponsors
+6. Generate the application encryption key:
+   ```bash
+   docker-compose exec app php artisan key:generate
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+7. Verify ownership (optional for permissions):
+   ```bash
+   sudo chown -R www-data:www-data .
+   ```
 
-### Premium Partners
+8. Access the application at http://localhost (default port 80).
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+## Environments
 
-## Contributing
+### Production
+- **URL**: [https://demo.yansprint.com/](https://demo.yansprint.com/)
+- **Folder Path**: `public_html/test/`
+- **Database**: `u338590880_live`
+- **Repo Branch**: `main`
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## **Deployment Steps**
 
-## Code of Conduct
+1. Pull the latest code:
+   ```bash
+   git pull origin main
+   ```
+   
+2. Run optimization commands:
+   ```bash
+   php artisan optimize
+   php artisan cache:clear
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## **Integrations**
 
-## Security Vulnerabilities
+### **Trello API**
+Integrate with Trello to manage tasks and workflows for print projects.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### **Stripe Terminal**
+Process payments securely using Stripe Terminal for POS.
 
-## License
+### **Shipping API**
+Integrate with shipping providers for order fulfillment and tracking.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### **Google Drive Integration**
+Save and retrieve files on Google Drive.
 
-php artisan migrate:fresh --seed && php artisan optimize
+## **Code Repository**
 
-php artisan make:model -m Size ; php artisan make:controller Admin\SizeController ; php artisan make:request Admin\SizeRequest
+Repository URL: [https://github.com/sergeygalstyan87/printing.git](https://github.com/sergeygalstyan87/printing.git)
+
+
+
+
+
+
