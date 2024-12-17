@@ -1,0 +1,44 @@
+.product_attributes label{
+    margin-bottom: 10px;
+}
+.product_deliveries{
+    display: flex;
+    justify-content: space-between;
+}
+.product_deliveries .hidden{
+    display: none;
+}
+.product_deliveries input{
+    display: none;
+}
+.product_deliveries label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*min-width: 150px;*/
+    border: 2px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px 0;
+    background: #fff;
+}
+.product_deliveries label.active{
+    border: 2px solid #000;
+}
+.product_deliveries label b{
+    font-size: 15px;
+    color: #000000;
+}
+.product_deliveries label span{
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 15px;
+}
+
+.rate_list_form {
+    padding: 10px 36px 10px 31px;
+    margin: 32px 0;
+    background: #fbfbfb;
+    display: table;
+    width: 100%;
+}

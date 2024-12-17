@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+
+  printman:
+    container_name: printman
+    build: ./docker-file/web/
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www/html/
+      - ./docker-file/web/000-default.conf:/etc/apache2/sites-available/000-default.conf
+  printman_db:
+    container_name: printman_mysql
+    image: mysql:8.0
+    restart: unless-stopped
+    tty: true
+    ports:
+        - "3306:3306"
+    environment:
+        MYSQL_DATABASE: printman
+        MYSQL_USER: laravel
+        MYSQL_PASSWORD: printman
+        MYSQL_ROOT_PASSWORD: root
+
+  phpmyadmin:
+    container_name: printman_phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    ports:
+    - '8888:80'
+    environment:
+    - PMA_ARBITRARY=1
+    - PMA_HOST=printman_db
+    - UPLOAD_LIMIT=300M
+
+    depends_on:
+    - printman_db
+
+#  Uncomment to use MailHog in docker for local EMAIL tests
+#  mailhog:
+#      image: mailhog/mailhog:latest
+#      restart: always
+#      ports:
+#          - "1025:1025"
+#          - "8025:8025"

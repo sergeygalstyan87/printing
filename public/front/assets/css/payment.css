@@ -1,0 +1,160 @@
+.credit-card {
+    margin: 10px 0;
+    border-radius: 7px;
+    /*width: 95%;*/
+    width: 250px;
+    position: relative;
+    transition: all 0.4s ease;
+    box-shadow: 0 2px 4px 0 #cfd7df;
+    min-height: 90px;
+    padding: 13px;
+    color: #efefef;
+    background-color: transparent;
+}
+.add_card_block{
+    margin: 10px 0;
+    border-radius: 7px;
+    width: 250px;
+    position: relative;
+    transition: all 0.4s ease;
+    min-height: 90px;
+    padding: 13px;
+    background-color: transparent;
+    border: 1px dashed #9f9f9f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.add_card_sign{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #9f9f9f;
+    font-weight: bold;
+    gap: 8px;
+}
+.credit-card.selectable:hover {
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+
+/*  NUMBER FORMATTING */
+
+.credit-card-last4 {
+    font-size: 24px;
+}
+
+.credit-card-last4:before {
+    content: "**** **** **** ";
+    color: #4f4d4d;
+    font-size: 20px;
+}
+
+.credit-card.american-express .credit-card-last4:before,
+.credit-card.amex .credit-card-last4:before {
+    content: "**** ***** **";
+    margin-right: -10px;
+}
+
+.credit-card-expiry {
+    font-size: 18px;
+    position: absolute;
+    bottom: 8px;
+    left: 15px;
+}
+
+
+/* BRAND CUSTOMIZATION */
+
+.credit-card.visa {
+    background: #4862e2;
+    color: #eaeef2;
+}
+
+.credit-card.visa .credit-card-last4:before {
+    color: #8999e5;
+}
+
+.credit-card.mastercard {
+    background: #4f0cd6;
+    color: #e3e8ef;
+}
+
+.credit-card.mastercard .credit-card-last4:before {
+    color: #8a82dd;
+}
+
+.credit-card.american-express,
+.credit-card.amex {
+    background: #1cd8b3;
+    color: #f2fcfa;
+}
+
+.credit-card.american-express .credit-card-last4:before,
+.credit-card.amex .credit-card-last4:before {
+    color: #99efe0;
+}
+
+.credit-card.discover {
+    background: #f16821;
+    color: #fff4ef;
+}
+
+.credit-card.discover .credit-card-last4:before {
+    color: #ffae84;
+}
+
+/*   LOGOS  */
+
+.credit-card::after {
+    content: " ";
+    position: absolute;
+    bottom: 10px;
+    right: 35px;
+}
+
+.credit-card-delete{
+    position: absolute;
+    bottom: 1px;
+    right: 6px;
+    z-index: 1;
+}
+
+.credit-card-selected{
+    position: absolute;
+    top: 1px;
+    right: 6px;
+    z-index: 1;
+    bottom: unset;
+}
+
+.credit-card.visa::after {
+    height: 16px;
+    width: 50px;
+    background-image: url('../images/payment_system_logos/visa.png');
+}
+
+.credit-card.mastercard::after {
+    width: 40px;
+    height: 25px;
+    background-image: url('../images/payment_system_logos/mastercard.png');
+}
+
+.credit-card.amex::after,
+.credit-card.american-express::after {
+    width: 50px;
+    height: 14px;
+    background-image: url('../images/payment_system_logos/amex.png');
+}
+
+.credit-card.discover::after {
+    width: 50px;
+    height: 14px;
+    background-image: url('../images/payment_system_logos/discover.png');
+}
+
+.add_card_form{
+    display: none;
+}

@@ -1,0 +1,50 @@
+.product_images{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-top:20px;padding-left:20px}
+.product_image{position:relative;margin:0 15px}
+.delete_image{position:absolute;top:-10px;right:-10px;width:20px;height:20px;background-color:red;border-radius:50%;border:none;cursor:pointer;font-size: 12px;color: #ffffff;display: flex;align-items: center;justify-content: center}
+.delete_image:focus{outline:none}
+.delete_image span{display:block;width:10px;height:2px;background-color:#fff}
+.delete_image span:first-child{-webkit-transform:translate(-1px,1px) rotate(45deg);-ms-transform:translate(-1px,1px) rotate(45deg);transform:translate(-1px,1px) rotate(45deg)}
+.delete_image span:last-child{-webkit-transform:translate(-1px,-1px) rotate(-45deg);-ms-transform:translate(-1px,-1px) rotate(-45deg);transform:translate(-1px,-1px) rotate(-45deg)}
+.select2-container{width:100%!important}
+.quantity_block{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;border:1px solid;margin-top:15px;border-radius:15px;padding:20px}
+.quantity_block h4{-ms-flex-preferred-size:100%;flex-basis:100%}
+.quantity_block .attr_group{-ms-flex-preferred-size:32%;flex-basis:32%;margin-right:1%;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.quantity_block .attr_group span{margin:0 10px}
+.delivery_group{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}
+.delivery_group > div{-ms-flex-preferred-size:45%;flex-basis:40%}
+.delivery_group .is_over_time,.delivery_group .is_over_count{flex-basis: unset}
+.delivery_group .is_over_count{width: 80px}
+.delivery_group .is_over_time input{height: 20px;margin-bottom: 7px;margin-top: 7px;}
+.quantity_top_block{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-ms-flex-preferred-size:100%;flex-basis:100%}
+.quantity_top_block > div{-ms-flex-preferred-size:100%;flex-basis:100%;text-align:right}
+.quantity_top_block b{color:#ec008c;font-size:24px;font-weight:800}
+.quantity_shipping{width:100%}
+.quantity_attributes,.quantity_sizes{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}
+.quantity_shipping h6{margin-top:10px}
+.attr_group input{-ms-flex-preferred-size:30%;flex-basis:30%}
+.attr_group input:-moz-read-only{flex-basis:69%}
+.attr_group input:read-only{-ms-flex-preferred-size:69%;flex-basis:69%}
+.custom_sizes{display:none}
+.quantity_sizes h6{-ms-flex-preferred-size:100%;flex-basis:100%}
+.custom_input_group{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}
+.custom_input_group > div{-ms-flex-preferred-size:93%;flex-basis:93%}
+.size_block{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
+.size_block > div{-ms-flex-preferred-size:24%;flex-basis:24%}
+.add_discount{
+    margin-bottom: 10px;
+}
+.discount_group{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 15px;
+}
+.discount_group > div{
+    flex-basis: 45%;
+}
+.form-control{
+    transition: .3s;
+}
+.form-control.error{
+    border: 1px solid red;
+}
